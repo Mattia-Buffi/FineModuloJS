@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+*{
+    margin:0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color:#00273f;
+}
+body{
+    background-color: #eefaf8;
+}
+h1{
+    font-size: 50px;
+}
+div.headerBox{
+    display: flex;
+    align-items: center;
+}
+img.logo{
+    height: 100px;
+    width: 100px;
+}
+div#mainContainer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+div#inputBox{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    align-content: space-around;
+    align-items: flex-end;
+    width: 80vw;
+    min-height: 300px;
+    background-color: rgba(8, 187, 253, 0.6);
+    border-radius: 25px;
+}
+div.inputBar{
+    width: 40%;
+    margin:10px;
+}
+
+input.textBox {
+    width: 100%;
+    height: 50px;
+    border:none;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+#buttonFind, #newResearch{
+    border:none;
+    padding: 0 20px;
+    height: 50px;
+    width:170px;
+    border-radius: 10px;
+    border-color:white;
+    cursor:pointer;
+    margin: 10px;
+    background-color: #3ac532;
+}
+#buttonFind:hover, #newResearch:hover{
+    background-color: #12872f;
+}
+.buttonMoreInfo{
+    height: 50px;
+    width:170px;
+    border-radius: 10px;
+    cursor:pointer;
+    margin: 10px;
+    border-color: #3ac532;
+    background-color:#eefaf8;
+}
+.buttonMoreInfo:hover{
+    color:#3ac532;
+}
+div#outputBox{
+    display:none;
+    width: 80vw;
+    min-height: 300px;
+    height: 100%;
+    margin-bottom: 50px;
+    overflow: scroll;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+ul#recordList{
+    margin-top:20px;
+    width: 100%;
+}
+li.resultBox{
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-flow: row wrap; 
+    border-bottom: solid 2px #00273f; 
+}
+div.boxTitle{
+    width: 50%;
+    height: 50px;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+div.boxLocation{
+    height: 50px;
+    width:220px;
+    margin: 10px;
+    padding-left: 20px;
+    border-left: solid 2px #12872f;
+    text-align: left;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+div#footer{
+    border-top:solid 2px rgb(8, 187, 253);
+    text-align: center;
+    padding-top: 20px;
+    width: 100%;
+    height: 100px;
+}
