@@ -119,9 +119,34 @@ div.boxLocation{
     text-overflow: ellipsis;
 }
 div#footer{
+    margin-top: 20px;
     border-top:solid 2px rgb(8, 187, 253);
     text-align: center;
     padding-top: 20px;
     width: 100%;
     height: 100px;
+}
+@media (max-Width:400px) {
+div#mainContainer{
+    height: 100%; 
+}
+div#inputBox{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+}
+div.inputBar{
+    width: 80%;
+}
+div#outputBox{
+    overflow:unset;
+}
+div.boxTitle{
+    width: 100%;
+}
+li.resultBox{
+    margin-top: 20px;
+}
 }

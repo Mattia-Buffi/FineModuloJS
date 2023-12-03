@@ -129,6 +129,14 @@ const jobs = [
 let resultGlobal={};
 let outputBoxNode=document.getElementById('outputBox');
 let inputBoxNode=document.getElementById('inputBox');
+//---------  EVENTI  ----------------------------------------------------------------
+// click su tasto FIND
+document.getElementById('buttonFind').addEventListener('click',goFind);
+// premendo il tasto enter
+document.addEventListener('keypress',(event)=>{
+        if(event.key!=='Enter') return;
+        goFind();
+});
 
 // ------ Funzione di creazione risultati ----------------------------
 function showResult(resultObjet){
@@ -155,6 +163,7 @@ function showResult(resultObjet){
     newRecordValue[2]=document.createElement('button');
     newRecordValue[2].className='buttonMoreInfo';
     newRecordValue[2].innerText='SHOW MORE';
+    newRecordValue[2].value=index;            //indice per individuare il tasto
     for (let element of newRecordValue) {
       document.getElementsByClassName('resultBox')[index].appendChild(element)}
   }
@@ -163,26 +172,21 @@ function showResult(resultObjet){
   outputBoxNode.style.display='flex';
   inputBoxNode.style.flexWrap='noWrap';
   inputBoxNode.style.minHeight='initial';
-// listener sul bottone per maggiori info, come lo riconosco? 
+// listener sul bottone per maggiori info, lo traccio con il value 
   for (let showMorePin of document.getElementsByClassName('buttonMoreInfo')) {
     showMorePin.addEventListener('click',(event)=>{
-      console.log(event);
+      let pin=event.target.value;
+      alert(resultGlobal.result[pin].title+' in  '+resultGlobal.result[pin].location);
     }) 
   }
 }
-//---------  EVENTI  ----------------------------------------------------------------
-// click su tasto FIND
-document.getElementById('buttonFind').addEventListener('click',goFind);
-// premendo il tasto enter
-document.addEventListener('keypress',(event)=>{
-        if(event.key!=='Enter') return;
-        goFind();
-});
 // funzione di ricerca che si avvia con i due possibili eventi
 function goFind(){
   resetRecord();
   let temp1=document.getElementById('titleJob').value;
   let temp2=document.getElementById('locationJob').value;
+  //obbligo la compilazione di almeno uno dei due campi
+  if((temp1==='')&&(temp2==='')) return alert('Compila almeno uno dei due campi');
   searchPositionTwo(temp1,temp2);
 }
 // elimino tutti i li.resultBox per aver l'output pulito
@@ -221,6 +225,3 @@ function researchValue(arrayIN,arrayTemp,propertyTemp){
   console.log(resultArray);
   return resultArray;
 }
-
-// come rimuovere un elemneto
-//riconoscere il bottone premuto ''Show More
